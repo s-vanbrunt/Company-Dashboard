@@ -1,5 +1,5 @@
 # Company-Dashboard
-A full stack web app and RESTful web service to track companies, users, teams, and projects.
+A full stack web app and RESTful web service to track companies, users, teams, and projects. Written in collaboration with other developers through Git and Github.
 
 The front end web app uses HTML, CSS, JavaScript, and React.
 
