@@ -1,0 +1,574 @@
+.page-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 4rem;
+}
+
+h1 {
+  color: var(--main-accent);
+  font-size: 3.5rem;
+  margin: 3rem;
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-weight: 400;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.modal-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--card-body);
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  width: min(500px, 95vw);
+  z-index: 2;
+}
+
+.close-btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-modal-btn {
+  color: var(--tertiary-accent);
+  width: 3.5rem !important;
+  height: 3.5rem !important;
+  cursor: pointer;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.modal-body.delete-announce {
+  gap: 30px;
+  min-height: 300px;
+  padding: 0 30px;
+  text-align: center;
+}
+
+.modal-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 3rem;
+  margin: 2rem 0;
+}
+
+.modal-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.submit-btn {
+  background-color: var(--main-accent);
+  padding: 1rem 6rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.6rem;
+  color: white;
+  margin: 2rem 0;
+  cursor: pointer;
+}
+
+.editForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: right;
+}
+
+.header-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.header-w-subtitle-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: var(--main-accent);
+  font-size: 14px;
+}
+
+.header-w-subtitle-wrapper h1 {
+  margin-bottom: 10px;
+}
+
+.go-back {
+  position: absolute;
+  left: 0;
+  color: var(--main-accent);
+  font-size: 2rem;
+}
+
+.project-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: min(800px, 100%);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid var(--secondary-accent);
+  gap: 4rem;
+  padding: 2.5rem 0;
+  width: 100%;
+}
+
+.project-name {
+  font-size: 2.5rem;
+  width: max(200px, 100%);
+}
+
+.activity-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 2rem;
+  font-size: 1.8rem;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: min(800px, 100%);
+}
+
+.user-table {
+  border: solid;
+  border-color: var(--secondary-accent);
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  border-radius: 10px;
+}
+
+.user-card,
+.user-header-card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid var(--secondary-accent);
+  gap: 4rem;
+  padding: 2.5rem 0;
+}
+
+.user-card {
+  color: var(--secondary-accent);
+}
+
+.row-with-5-columns {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+  text-align: center;
+  padding: 3rem;
+  font-size: 20px;
+  overflow-x: auto;
+}
+
+.active {
+  color: var(--active);
+}
+
+.inactive {
+  color: var(--inactive);
+}
+
+.project-btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-self: flex-end;
+  width: min-content;
+  gap: 1rem;
+}
+
+.edit-btn,
+.new-project-btn,
+.add-user-btn {
+  border: none;
+  padding: 0.8rem 4rem;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  width: 110px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  color: black;
+  background-color: var(--secondary-accent);
+}
+
+.delete-btn {
+  color: var(--tertiary-accent);
+  width: 3rem !important;
+  height: 3rem !important;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: white;
+}
+
+.new-project-btn {
+  color: white;
+  background-color: var(--main-accent);
+  margin: 3rem 0;
+}
+
+.add-user-btn {
+  color: white;
+  background-color: var(--main-accent);
+  width: 15rem;
+  align-self: flex-start;
+}
+
+/* Teams */
+
+.team-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  justify-content: center;
+  justify-items: center;
+  gap: 50px;
+  min-width: 50vw;
+  width: fit-content;
+  max-width: 70vw;
+  margin: auto;
+}
+
+.team-card {
+  font-size: 1.6rem;
+  background-color: var(--card-body);
+  border-radius: 10px;
+  width: clamp(30%, 400px, 90vw);
+  min-height: 300px;
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--secondary-accent);
+}
+
+.team-header a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  height: 3rem;
+}
+
+.team-header a:hover {
+  border-bottom: 2px solid white;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 20px 40px;
+  margin: 5px;
+}
+
+.team-pill {
+  height: fit-content;
+  padding: 10px 15px;
+  text-align: center;
+  background-color: var(--main-accent);
+  border-radius: 15px;
+}
+
+.add-team-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: clamp(30%, 400px, 90vw);
+  height: 300px;
+  border: 1px solid var(--secondary-accent);
+  border-radius: 10px;
+  font-size: 1.6rem;
+  color: var(--secondary-accent);
+  cursor: pointer;
+}
+
+.add-team-btn:hover {
+  background: rgba(222, 185, 146, 0.1);
+}
+
+.add-team-icon {
+  font-size: 5rem !important;
+  color: var(--secondary-accent);
+}
+
+.delete-member-icon {
+  font-size: 2.5rem !important;
+  color: var(--tertiary-accent);
+  cursor: pointer;
+}
+
+/* Announcements */
+
+.announce-wrapper,
+.announce-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  width: clamp(40vw, 600px, 90vw);
+  margin: 0 auto 50px auto;
+}
+
+.announce-list {
+  flex-direction: column-reverse;
+}
+
+.announce-top {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  padding: 3rem;
+  border-bottom: 1px solid var(--secondary-accent);
+}
+
+.announce-top h1 {
+  grid-column: 2 / 3;
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+}
+
+.announce-btn {
+  grid-column: 3 / 4;
+  align-self: end;
+  justify-self: end;
+  width: fit-content;
+  height: fit-content;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background: var(--main-accent);
+  color: white;
+  cursor: pointer;
+}
+
+.announce-btn:hover {
+  background: white;
+  color: var(--main-accent);
+}
+
+.announce-card {
+  padding-top: 50px;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  color: white;
+  background: var(--card-body);
+}
+
+.announce-card.isAuthor {
+  padding: 0;
+}
+
+.announce-options {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+  padding: 20px 20px 10px 20px;
+}
+
+.announce-card .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  height: fit-content;
+  width: clamp(25vw, 600px, 90vw);
+  padding: 0px 50px 50px 50px;
+}
+
+.announce-card header {
+  width: 100%;
+}
+
+.announce-card header h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.announce-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.announce-card p {
+  white-space: pre-wrap;
+}
+
+.announce-icon {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  cursor: pointer;
+  color: var(--main-accent);
+}
+
+.announce-icon.edit:hover {
+  color: white;
+}
+
+.announce-icon.delete:hover {
+  color: var(--tertiary-accent);
+}
+
+.announce-delete-btn {
+  padding: 10px 20px;
+  background: var(--main-accent);
+  font-size: 1.6rem;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.announce-delete-btn:hover {
+  background: var(--tertiary-accent);
+}
+
+/* Login Page */
+
+.login-btn {
+  min-width: 150px;
+  padding: 10px 20px;
+  margin-top: 50px;
+  background: #051622;
+  font-size: 1.6rem;
+  color: white;
+  border: 1px solid var(--main-accent);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: var(--main-accent);
+  color: white;
+}
+
+/* Media Queries */
+
+@media (max-width: 1860px) {
+  .team-body {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 750px) {
+  .go-back {
+    display: none;
+  }
+
+  .page-body.users {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin: 3rem 0;
+  }
+
+  .announce-top h1 {
+    grid-column: 1 / 2;
+  }
+
+  .announce-top.not-admin {
+    display: block;
+  }
+
+  .page-body {
+    /* padding: 0; */
+  }
+
+  .team-body {
+    width: 100%;
+    gap: 30px;
+  }
+
+  .team-pill {
+    font-size: 1.4rem;
+  }
+
+  .project-card,
+  .activity-wrapper {
+    flex-direction: column;
+  }
+}
